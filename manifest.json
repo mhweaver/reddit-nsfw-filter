@@ -1,0 +1,15 @@
+{
+  "name": "Reddit NSFW Filter",
+  "version": "1.0",
+  "description": "Filter NSFW posts on reddit!",
+  "permissions": [
+    "http://*.reddit.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*.reddit.com/*"],
+      "run_at": "document_start",
+      "js": ["jquery.js", "filter.js"]
+    }
+  ]
+}
