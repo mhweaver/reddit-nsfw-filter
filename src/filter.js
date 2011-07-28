@@ -7,7 +7,6 @@ document.onreadystatechange = function(e) {
   var showNSFW = localStorage['showNSFW']
   var showNSFWText = showNSFW == "true" ? 'on' : 'off'
   if (showNSFW == 'false') {
-    map(document.querySelectorAll('.over18'), function(x) {console.log(x.style)})
     map(document.querySelectorAll('.over18'), hide)
   }
  
