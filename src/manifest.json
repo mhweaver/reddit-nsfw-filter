@@ -1,6 +1,6 @@
 {
   "name": "Reddit NSFW Filter",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Filter NSFW posts on reddit!",
   "permissions": [
     "http://*.reddit.com/*"
