@@ -9,7 +9,7 @@
     {
       "matches": ["http://*.reddit.com/*"],
       "run_at": "document_start",
-      "js": ["jquery.js", "filter.js"]
+      "js": ["filter.js"]
     }
   ]
 }
