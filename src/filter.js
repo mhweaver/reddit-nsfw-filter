@@ -7,7 +7,7 @@ document.onreadystatechange = function(e) {
   var showNSFW = localStorage['showNSFW']
   var showNSFWText = showNSFW == "true" ? 'on' : 'off'
   if (showNSFW == 'false') {
-    map(document.querySelectorAll('.over18'), hide)
+    document.querySelectorAll('.over18').map(hide)
   }
  
   var toggleLink = document.createElement("a")
@@ -33,18 +33,19 @@ document.onreadystatechange = function(e) {
 function toggleNSFW() {
   localStorage['showNSFW'] = localStorage['showNSFW'] == "true" ? "false" : "true"
   if (localStorage['showNSFW'] == "true") {
-    map(document.querySelectorAll('.over18'), show)
+    document.querySelectorAll('.over18').map(show)
   } else {
-    map(document.querySelectorAll('.over18'), hide)
+    document.querySelectorAll('.over18').map(hide)
   }
 }
 
-function map(xs, fn) {
-  var newArr = []
-  for (i in xs) {
-    newArr.push(fn(xs[i]))
+// Warning: Since this works with NodeLists, changes will be made to the actual
+// NodeList object (as opposed to Array.map() which returns a new Array object)
+NodeList.prototype.map = function(fn) {
+  for (i in this) {
+    fn(this[i])
   }
-  return newArr
+  return this
 }
 function hide(element) {
   if (element.style != undefined) return element.style["display"] = "none"
